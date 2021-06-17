@@ -1,0 +1,3 @@
+/home/pranjal/ReadPolyData/build/CMakeFiles/rebuild_cache.dir
+/home/pranjal/ReadPolyData/build/CMakeFiles/edit_cache.dir
+/home/pranjal/ReadPolyData/build/CMakeFiles/ReadPolyData.dir
