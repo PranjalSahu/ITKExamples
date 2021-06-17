@@ -9,3 +9,10 @@ make ImageRegistration1<br/>
 
 
 ./ImageRegistration1 BrainProtonDensitySliceBorder20.png BrainProtonDensitySliceShifted13x17y.png ImageRegistration1Output.png ImageRegistration1DifferenceAfter.png ImageRegistration1DifferenceBefore.png
+
+
+# Command to run the First CMake Sample inside TestCMakeExample
+cd TestCMakeExample/bin
+cmake ../
+make
+./FirstSample /home/pranjal/Downloads/lena512.bmp /home/pranjal/Downloads/lena512_output.png
