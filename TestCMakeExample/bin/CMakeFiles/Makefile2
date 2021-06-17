@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/pranjal/TestCMakeExample/bin
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/ImageRegistration1.dir/all
+all: CMakeFiles/FirstSample.dir/all
 
 .PHONY : all
 
@@ -63,36 +63,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/ImageRegistration1.dir/clean
+clean: CMakeFiles/FirstSample.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ImageRegistration1.dir
+# Target rules for target CMakeFiles/FirstSample.dir
 
 # All Build rule for target.
-CMakeFiles/ImageRegistration1.dir/all:
-	$(MAKE) -f CMakeFiles/ImageRegistration1.dir/build.make CMakeFiles/ImageRegistration1.dir/depend
-	$(MAKE) -f CMakeFiles/ImageRegistration1.dir/build.make CMakeFiles/ImageRegistration1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pranjal/TestCMakeExample/bin/CMakeFiles --progress-num=1,2 "Built target ImageRegistration1"
-.PHONY : CMakeFiles/ImageRegistration1.dir/all
+CMakeFiles/FirstSample.dir/all:
+	$(MAKE) -f CMakeFiles/FirstSample.dir/build.make CMakeFiles/FirstSample.dir/depend
+	$(MAKE) -f CMakeFiles/FirstSample.dir/build.make CMakeFiles/FirstSample.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pranjal/TestCMakeExample/bin/CMakeFiles --progress-num=1,2 "Built target FirstSample"
+.PHONY : CMakeFiles/FirstSample.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ImageRegistration1.dir/rule: cmake_check_build_system
+CMakeFiles/FirstSample.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pranjal/TestCMakeExample/bin/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ImageRegistration1.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/FirstSample.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pranjal/TestCMakeExample/bin/CMakeFiles 0
-.PHONY : CMakeFiles/ImageRegistration1.dir/rule
+.PHONY : CMakeFiles/FirstSample.dir/rule
 
 # Convenience name for target.
-ImageRegistration1: CMakeFiles/ImageRegistration1.dir/rule
+FirstSample: CMakeFiles/FirstSample.dir/rule
 
-.PHONY : ImageRegistration1
+.PHONY : FirstSample
 
 # clean rule for target.
-CMakeFiles/ImageRegistration1.dir/clean:
-	$(MAKE) -f CMakeFiles/ImageRegistration1.dir/build.make CMakeFiles/ImageRegistration1.dir/clean
-.PHONY : CMakeFiles/ImageRegistration1.dir/clean
+CMakeFiles/FirstSample.dir/clean:
+	$(MAKE) -f CMakeFiles/FirstSample.dir/build.make CMakeFiles/FirstSample.dir/clean
+.PHONY : CMakeFiles/FirstSample.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

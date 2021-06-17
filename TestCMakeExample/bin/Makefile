@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/pranjal/TestCMakeExample/bin
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ImageRegistration1
+# Target rules for targets named FirstSample
 
 # Build rule for target.
-ImageRegistration1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ImageRegistration1
-.PHONY : ImageRegistration1
+FirstSample: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 FirstSample
+.PHONY : FirstSample
 
 # fast build rule for target.
-ImageRegistration1/fast:
-	$(MAKE) -f CMakeFiles/ImageRegistration1.dir/build.make CMakeFiles/ImageRegistration1.dir/build
-.PHONY : ImageRegistration1/fast
+FirstSample/fast:
+	$(MAKE) -f CMakeFiles/FirstSample.dir/build.make CMakeFiles/FirstSample.dir/build
+.PHONY : FirstSample/fast
 
-ImageRegistration1.o: ImageRegistration1.cxx.o
+FirstSample.o: FirstSample.cxx.o
 
-.PHONY : ImageRegistration1.o
+.PHONY : FirstSample.o
 
 # target to build an object file
-ImageRegistration1.cxx.o:
-	$(MAKE) -f CMakeFiles/ImageRegistration1.dir/build.make CMakeFiles/ImageRegistration1.dir/ImageRegistration1.cxx.o
-.PHONY : ImageRegistration1.cxx.o
+FirstSample.cxx.o:
+	$(MAKE) -f CMakeFiles/FirstSample.dir/build.make CMakeFiles/FirstSample.dir/FirstSample.cxx.o
+.PHONY : FirstSample.cxx.o
 
-ImageRegistration1.i: ImageRegistration1.cxx.i
+FirstSample.i: FirstSample.cxx.i
 
-.PHONY : ImageRegistration1.i
+.PHONY : FirstSample.i
 
 # target to preprocess a source file
-ImageRegistration1.cxx.i:
-	$(MAKE) -f CMakeFiles/ImageRegistration1.dir/build.make CMakeFiles/ImageRegistration1.dir/ImageRegistration1.cxx.i
-.PHONY : ImageRegistration1.cxx.i
+FirstSample.cxx.i:
+	$(MAKE) -f CMakeFiles/FirstSample.dir/build.make CMakeFiles/FirstSample.dir/FirstSample.cxx.i
+.PHONY : FirstSample.cxx.i
 
-ImageRegistration1.s: ImageRegistration1.cxx.s
+FirstSample.s: FirstSample.cxx.s
 
-.PHONY : ImageRegistration1.s
+.PHONY : FirstSample.s
 
 # target to generate assembly for a file
-ImageRegistration1.cxx.s:
-	$(MAKE) -f CMakeFiles/ImageRegistration1.dir/build.make CMakeFiles/ImageRegistration1.dir/ImageRegistration1.cxx.s
-.PHONY : ImageRegistration1.cxx.s
+FirstSample.cxx.s:
+	$(MAKE) -f CMakeFiles/FirstSample.dir/build.make CMakeFiles/FirstSample.dir/FirstSample.cxx.s
+.PHONY : FirstSample.cxx.s
 
 # Help Target
 help:
@@ -156,12 +156,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... ImageRegistration1"
-	@echo "... ImageRegistration1.o"
-	@echo "... ImageRegistration1.i"
-	@echo "... ImageRegistration1.s"
+	@echo "... edit_cache"
+	@echo "... FirstSample"
+	@echo "... FirstSample.o"
+	@echo "... FirstSample.i"
+	@echo "... FirstSample.s"
 .PHONY : help
 
 

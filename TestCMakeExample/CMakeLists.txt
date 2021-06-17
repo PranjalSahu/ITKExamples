@@ -13,12 +13,12 @@ endforeach()
 
 
 # This project is designed to be built outside the Insight source tree.
-project(ImageRegistration1)
+project(FirstSample)
 
 # Find ITK.
 find_package(ITK REQUIRED)
 include(${ITK_USE_FILE})
 
-add_executable(ImageRegistration1 ImageRegistration1.cxx )
+add_executable(FirstSample FirstSample.cxx )
 
-target_link_libraries(ImageRegistration1 ${ITK_LIBRARIES})
+target_link_libraries(FirstSample ${ITK_LIBRARIES})

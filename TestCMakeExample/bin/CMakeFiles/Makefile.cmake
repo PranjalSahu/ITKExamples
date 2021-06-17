@@ -202,5 +202,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/ImageRegistration1.dir/DependInfo.cmake"
+  "CMakeFiles/FirstSample.dir/DependInfo.cmake"
   )
