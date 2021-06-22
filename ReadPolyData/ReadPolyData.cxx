@@ -1,14 +1,9 @@
-#include <vtkActor.h>
-#include <vtkCamera.h>
-#include <vtkNamedColors.h>
 #include <vtkPolyDataMapper.h>
 #include <vtkProperty.h>
-#include <vtkRenderWindow.h>
-#include <vtkRenderWindowInteractor.h>
-#include <vtkRenderer.h>
 #include <vtkSmartPointer.h>
 #include <vtkXMLPolyDataReader.h>
 #include <vtkMassProperties.h>
+#include <vtkSmoothPolyDataFilter.h>
 
 
 int main(int argc, char* argv[])
@@ -23,42 +18,24 @@ int main(int argc, char* argv[])
 
   std::string filename = argv[1];
 
-  vtkNew<vtkNamedColors> colors;
   vtkNew<vtkMassProperties> mass_properties;
   
-  // Read all the data from the file
+  // Read all the data from the vtp file
   vtkNew<vtkXMLPolyDataReader> reader;
   reader->SetFileName(filename.c_str());
   reader->Update();
-
-  // Visualize
-  vtkNew<vtkPolyDataMapper> mapper;
-  mapper->SetInputConnection(reader->GetOutputPort());
   
-  mass_properties->SetInputData(reader->GetOutput());
+  // Smooth the volume with the vtkSmoothPolyDataFilter
+  vtkNew<vtkSmoothPolyDataFilter> smooth_filter;
+  smooth_filter->SetNumberOfIterations(5);
+  smooth_filter->SetInputDataObject (0, reader->GetOutput());
+  smooth_filter->Update();
+
+  //mass_properties->SetInputData(reader->GetOutput());
+  mass_properties->SetInputData(smooth_filter->GetOutputDataObject(0));
   std::cout << "Volume of the given vtp file is " << ": ";
   std::cout << mass_properties->GetVolume() << std::endl;
-
-  /*vtkNew<vtkActor> actor;
-  actor->SetMapper(mapper);
-  actor->GetProperty()->SetColor(colors->GetColor3d("NavajoWhite").GetData());
-
-  vtkNew<vtkRenderer> renderer;
-  vtkNew<vtkRenderWindow> renderWindow;
-  renderWindow->AddRenderer(renderer);
-  vtkNew<vtkRenderWindowInteractor> renderWindowInteractor;
-  renderWindowInteractor->SetRenderWindow(renderWindow);
-
-  renderer->AddActor(actor);
-  renderer->SetBackground(colors->GetColor3d("DarkOliveGreen").GetData());
-  renderer->GetActiveCamera()->Pitch(90);
-  renderer->GetActiveCamera()->SetViewUp(0, 0, 1);
-  renderer->ResetCamera();
-
-  renderWindow->SetSize(600, 600);
-  renderWindow->Render();
-  renderWindow->SetWindowName("ReadPolyData");
-  renderWindowInteractor->Start();*/
+  
 
   return EXIT_SUCCESS;
 }
