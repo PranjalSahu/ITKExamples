@@ -16,3 +16,7 @@ cd TestCMakeExample/bin
 cmake ../
 make
 ./FirstSample /home/pranjal/Downloads/lena512.bmp /home/pranjal/Downloads/lena512_output.png
+
+
+# Command to run the Volume Calculation of vtp file with C++ code
+./ReadPolyData /home/pranjal/Downloads/Human.vtp
